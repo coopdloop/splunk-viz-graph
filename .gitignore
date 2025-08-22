@@ -49,3 +49,6 @@ tmp/
 
 # Development artifacts
 requirements/
+
+# Infrastructure
+infra/

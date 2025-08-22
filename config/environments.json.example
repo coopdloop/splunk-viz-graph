@@ -34,6 +34,50 @@
             "password": "your-cloud-password"
         }
     },
+    "opensearch_environments": {
+        "local_dev": {
+            "name": "Local Development OpenSearch",
+            "url": "http://localhost:9200",
+            "auth_type": "none",
+            "index_patterns": ["logs-*", "filebeat-*", "logstash-*"],
+            "default_time_range": "-24h@h",
+            "verify_ssl": false,
+            "description": "Local Docker OpenSearch for development"
+        },
+        "enterprise_dev": {
+            "name": "Enterprise Development OpenSearch",
+            "url": "https://opensearch-dev.company.com:9200",
+            "auth_type": "basic",
+            "username": "your-dev-username",
+            "password": "your-dev-password",
+            "index_patterns": ["logs-*", "security-*", "network-*"],
+            "default_time_range": "-24h@h",
+            "verify_ssl": true,
+            "description": "Development OpenSearch cluster"
+        },
+        "enterprise_prod": {
+            "name": "Enterprise Production OpenSearch",
+            "url": "https://opensearch-prod.company.com:9200",
+            "auth_type": "client_cert",
+            "client_cert": "/path/to/client.pem",
+            "client_key": "/path/to/client-key.pem",
+            "ca_certs": "/path/to/ca.pem",
+            "index_patterns": ["logs-*", "security-*", "network-*", "firewall-*", "proxy-*"],
+            "default_time_range": "-7d@d",
+            "verify_ssl": true,
+            "description": "Production OpenSearch cluster - use with caution"
+        },
+        "aws_managed": {
+            "name": "AWS Managed OpenSearch",
+            "url": "https://search-domain-xxx.us-east-1.es.amazonaws.com",
+            "auth_type": "aws_iam",
+            "aws_region": "us-east-1",
+            "index_patterns": ["logs-*", "cloudtrail-*", "vpc-flow-*"],
+            "default_time_range": "-24h@h",
+            "verify_ssl": true,
+            "description": "AWS Managed OpenSearch Service"
+        }
+    },
     "expected_vendors": [
         "Cisco",
         "Palo Alto", 
