@@ -1,0 +1,51 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# uv
+.uv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Exports
+exports/
+output/
+results/
+
+# Configuration files with sensitive data
+config/environments.json
+config/environments_local.json
+config/environments_production.json
+*.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+
+# Temporary files  
+temp/
+tmp/
+.tmp/
+
+# Development artifacts
+requirements/

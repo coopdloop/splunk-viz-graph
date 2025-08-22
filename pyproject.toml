@@ -1,0 +1,25 @@
+[project]
+name = "splunk-viz-graph"
+version = "0.1.0"
+description = "Jupyter notebook tool for querying Splunk Enterprise indices to identify vendor products and perform gap coverage analysis"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "jupyter>=1.0.0",
+    "requests>=2.31.0",
+    "pandas>=2.0.0", 
+    "matplotlib>=3.7.0",
+    "plotly>=5.15.0",
+    "ipywidgets>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0", 
+    "ruff>=0.0.285",
+    "bandit>=1.7.0",
+    "safety>=2.3.0",
+    "pre-commit>=3.0.0",
+]

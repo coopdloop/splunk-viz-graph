@@ -1,0 +1,68 @@
+{
+    "environments": {
+        "development": {
+            "name": "Development Environment",
+            "hec_url": "https://your-splunk-dev.company.com:8089/services/search/jobs",
+            "token": "YOUR-DEV-HEC-TOKEN-HERE",
+            "indices": ["main", "security", "network"],
+            "default_time_range": "-24h@h",
+            "verify_ssl": true,
+            "description": "Development Splunk environment",
+            "username": "your-username",
+            "password": "your-password"
+        },
+        "production": {
+            "name": "Production Environment",
+            "hec_url": "https://your-splunk-prod.company.com:8089/services/search/jobs",
+            "token": "YOUR-PROD-HEC-TOKEN-HERE",
+            "indices": ["main", "security", "network", "firewall", "proxy", "windows", "linux"],
+            "default_time_range": "-7d@d",
+            "verify_ssl": true,
+            "description": "Production Splunk environment - use with caution",
+            "username": "your-username",
+            "password": "your-password"
+        },
+        "cloud": {
+            "name": "Splunk Cloud",
+            "hec_url": "https://yourinstance.splunkcloud.com:8089/services/search/jobs",
+            "token": "YOUR-CLOUD-HEC-TOKEN-HERE",
+            "indices": ["main", "security", "network"],
+            "default_time_range": "-24h@h",
+            "verify_ssl": true,
+            "description": "Splunk Cloud instance",
+            "username": "your-cloud-username",
+            "password": "your-cloud-password"
+        }
+    },
+    "expected_vendors": [
+        "Cisco",
+        "Palo Alto", 
+        "Fortinet",
+        "Checkpoint",
+        "Juniper",
+        "F5",
+        "Microsoft",
+        "VMware",
+        "Splunk",
+        "AWS"
+    ],
+    "custom_vendor_patterns": {
+        "example_vendor": [
+            "example_pattern_1",
+            "example_pattern_2"
+        ]
+    },
+    "query_settings": {
+        "max_results": 10000,
+        "page_size": 1000,
+        "timeout_seconds": 300,
+        "default_earliest": "-24h@h",
+        "default_latest": "now"
+    },
+    "visualization_settings": {
+        "style": "default",
+        "color_palette": "Set3",
+        "chart_height": 500,
+        "chart_width": 800
+    }
+}
